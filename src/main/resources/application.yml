@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    group:
+      "local" : "local"
+    active : local
+
+  config:
+    import:
+      - classpath:/application-jwt.yml
+---
+spring:
+  config:
+    activate:
+      on-profile: "local"
+
+  redis:
+    host: localhost
+    port: 6379
