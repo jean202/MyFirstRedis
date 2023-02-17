@@ -1,6 +1,7 @@
 package com.study.blog.myfirstredis.config;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,6 +12,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 @RequiredArgsConstructor
 @Configuration
+@Slf4j
 //@ConfigurationProperties(prefix = "spring.redis")
 public class RedisConfig {
 
@@ -22,6 +24,9 @@ public class RedisConfig {
 
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
+        log.info("came here?");
+        log.info("host : {}", host);
+        log.info("port: {}", port);
         return new LettuceConnectionFactory(host, port);
     }
 

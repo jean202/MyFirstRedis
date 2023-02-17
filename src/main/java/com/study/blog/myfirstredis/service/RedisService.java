@@ -10,8 +10,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Slf4j
 public class RedisService {
-
-
     private final RedisTemplate<String, String> redisTemplate;
     public void practiceRedis() {
         ValueOperations<String, String> valueOperations = redisTemplate.opsForValue();
